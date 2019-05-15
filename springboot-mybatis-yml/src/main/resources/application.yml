@@ -1,0 +1,20 @@
+server:
+  port: 9000
+#mybatis配置
+mybatis:
+  #别名配置
+  type-aliases-package:
+    #mapper.xml文件配置
+  mapper-locations: classpath:/xml
+#配置数据库
+spring:
+  datasource:
+    #数据库联调名
+    username:
+      #连接地址
+    url:
+      #密码
+    data-password:
+      #连接驱动
+    driver-class-name: com.mysql.jdbc.Driver
+
