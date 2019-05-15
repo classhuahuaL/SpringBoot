@@ -27,13 +27,13 @@ public class MyBatisConfig {
         //阿里Druid连接池
         DruidDataSource druidDataSource = new DruidDataSource();
         //数据库url
-        druidDataSource.setUrl("");
+        druidDataSource.setUrl("jdbc:mysql://127.0.0.1:3306/demo?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&failOverReadOnly=false");
         //数据库账号
-        druidDataSource.setUsername("");
+        druidDataSource.setUsername("root");
         //数据库密码
-        druidDataSource.setPassword("");
+        druidDataSource.setPassword("lhh");
         //连接驱动
-        druidDataSource.setDriverClassName("");
+        druidDataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
 
         // 每个分区最大的连接数
         druidDataSource.setMaxActive(20);
@@ -55,14 +55,14 @@ public class MyBatisConfig {
             sqlSessionFactoryBean.setDataSource(dataSource());
 
             //设置别名包的位置
-            sqlSessionFactoryBean.setTypeAliasesPackage("");
+//            sqlSessionFactoryBean.setTypeAliasesPackage("");
 
             //设置读取xml文件
             ResourcePatternResolver resourcePatternResolver = new PathMatchingResourcePatternResolver();
-            sqlSessionFactoryBean.setMapperLocations(resourcePatternResolver.getResources("classpath:*.xml"));
+            sqlSessionFactoryBean.setMapperLocations(resourcePatternResolver.getResources("classpath:/mapper/*.xml"));
             //-- 加载mybatis的全局配置文件
-            Resource mybatisConfigXml = resourcePatternResolver.getResource("classpath:mybatis/mybatis-config.xml");
-            sqlSessionFactoryBean.setConfigLocation(mybatisConfigXml);
+            /*Resource mybatisConfigXml = resourcePatternResolver.getResource("classpath:mybatis/mybatis-config.xml");
+            sqlSessionFactoryBean.setConfigLocation(mybatisConfigXml);*/
 
             //return SqlSessionFactory
             return sqlSessionFactoryBean.getObject();

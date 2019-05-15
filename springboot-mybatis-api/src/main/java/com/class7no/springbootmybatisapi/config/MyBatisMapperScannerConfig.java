@@ -17,7 +17,7 @@ public class MyBatisMapperScannerConfig {
         //设置mybatis sqlSession工厂
         mapperScannerConfigurer.setSqlSessionFactoryBeanName("sqlSessionFactory");
         //设置mapper接口地址
-        mapperScannerConfigurer.setBasePackage("com....mapper");
+        mapperScannerConfigurer.setBasePackage("com.class7no.springbootmybatisapi.mapper");
         return mapperScannerConfigurer;
     }
 }
