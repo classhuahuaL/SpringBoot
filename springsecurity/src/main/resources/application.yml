@@ -1,0 +1,13 @@
+server:
+  port: 9001
+spring:
+  http:
+    converters:
+      preferred-json-mapper: jackson
+  thymeleaf:
+    cache: true
+  datasource:
+    url: jdbc:mysql://127.0.0.1/clientdb
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
